@@ -12,8 +12,19 @@
 #include <stdint.h>
 
 namespace ralab{
-  struct IFeatureAccess{
-    ~IFeatureAccess(){}
+  struct IFeatureProjection{
+    ~IFeatureProjection(){}
+    //projections
+    virtual char * getRTProjectionData(std::size_t & size) = 0;
+    virtual char * getMZProjectionData(std::size_t & size) = 0;
+
+    //
+    virtual std::vector<float> & getRTProjection() = 0;
+    virtual std::vector<float> & getMZProjection() = 0;
+  };
+
+  struct IIsotopeFeature{
+    ~IIsotopeFeature(){}
     virtual uint32_t getID()  = 0;
 
     virtual uint32_t getSwathId() = 0;
@@ -44,15 +55,9 @@ namespace ralab{
     virtual float getMinMZIdx() = 0;
     virtual float getMZExtend() = 0;
     virtual float getRTExtend() = 0;
-
-    //projections
-    virtual char * getRTProjectionData(std::size_t & size) = 0;
-    virtual char * getMZProjectionData(std::size_t & size) = 0;
-
-    //
-    virtual std::vector<float> & getRTProjection() = 0;
-    virtual std::vector<float> & getMZProjection() = 0;
   };
+
+  struct IFeatureAccess : IIsotopeFeature, IFeatureProjection{};
 
 
 
