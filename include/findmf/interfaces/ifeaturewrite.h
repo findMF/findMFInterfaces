@@ -9,7 +9,7 @@
 #ifndef IFEATUREWRITE_H
 #define IFEATUREWRITE_H
 
-namespace rala{
+namespace ralab{
   struct IFeatureWrite{
     ~IFeatureWrite(){}
     virtual void setID(uint32_t)  = 0;
