@@ -12,18 +12,20 @@
 #include <stdint.h>
 
 namespace ralab{
+
+  /// accessing feature properties
   struct IFeatureAccess{
     ~IFeatureAccess(){}
     virtual uint32_t getID()  = 0;
 
     virtual uint32_t getSwathId() = 0;
 
-    //intensities
+    /// intensities
     virtual float getVolume() = 0;
     virtual float getMaximum() = 0;
     virtual uint32_t getCount() = 0;
 
-    //location
+    /// location
     virtual float getApexMZ() = 0;
     virtual float getApexRT() = 0;
     virtual float getCenterOfMassMZ() = 0;
@@ -31,7 +33,7 @@ namespace ralab{
     virtual float getMaxLocationMZ() = 0;
     virtual float getMaxLocationRT() = 0;
 
-    //distribution infromation
+    /// distribution infromation
     virtual float getSDRT() = 0;
     virtual float getSDMZ() = 0;
     virtual float getKurtosisRT() = 0;
@@ -39,22 +41,18 @@ namespace ralab{
     virtual float getSkewnessRT() = 0;
     virtual float getSkewnessMZ() = 0;
 
-    //bounding box
+    /// bounding box
     virtual float getMinRTIdx() = 0;
     virtual float getMinMZIdx() = 0;
     virtual float getMZExtend() = 0;
     virtual float getRTExtend() = 0;
 
-    //projections
+    /// projections
     virtual char * getRTProjectionData(std::size_t & size) = 0;
     virtual char * getMZProjectionData(std::size_t & size) = 0;
-
-    //
     virtual std::vector<float> & getRTProjection() = 0;
     virtual std::vector<float> & getMZProjection() = 0;
   };
-
-
 
 }
 

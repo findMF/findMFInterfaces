@@ -29,8 +29,7 @@ namespace rala{
     virtual void setMaxLocationMZ(float) = 0;
     virtual void setMaxLocationRT(float) = 0;
 
-    //distribution infromation
-
+    ///distribution infromation
     virtual void setSDRT(float) = 0;
     virtual void setSDMZ(float) = 0;
     virtual void setKurtosisRT(float) = 0;
@@ -38,7 +37,7 @@ namespace rala{
     virtual void setSkewnessRT(float) = 0;
     virtual void setSkewnessMZ(float) = 0;
 
-    //bounding box
+    ///bounding box
     virtual void setMinRTIdx(float) = 0;
     virtual void setMinMZIdx(float) = 0;
     virtual void setMZExtend(float) = 0;
