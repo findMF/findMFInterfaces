@@ -14,11 +14,10 @@
 namespace ralab{
   struct IFeatureProjection{
     ~IFeatureProjection(){}
-    //projections
+    /// projections
     virtual char * getRTProjectionData(std::size_t & size) = 0;
     virtual char * getMZProjectionData(std::size_t & size) = 0;
-
-    //
+    ///
     virtual std::vector<float> & getRTProjection() = 0;
     virtual std::vector<float> & getMZProjection() = 0;
   };
@@ -51,18 +50,15 @@ namespace ralab{
     virtual float getSkewnessMZ() = 0;
 
     //bounding box
-    virtual float getMinRTIdx() = 0;
-    virtual float getMinMZIdx() = 0;
-    virtual float getMZExtend() = 0;
-    virtual float getRTExtend() = 0;
+    virtual uint32_t getMinRTIdx() = 0;
+    virtual uint32_t getMinMZIdx() = 0;
+    virtual uint32_t getMZExtend() = 0;
+    virtual uint32_t getRTExtend() = 0;
   };
 
+  /// IFeatureAccess
   struct IFeatureAccess : IIsotopeFeature, IFeatureProjection{};
 
-
-
 }
-
-
 
 #endif // FEATURE_H
